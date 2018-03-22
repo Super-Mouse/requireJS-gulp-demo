@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./lib/require.js"></script>
+</head>
+<body>
+    <h1>hello world</h1>
+    <h2 id="h2"></h2>
+    <script>
+        requirejs(['./module/a.js'], function($){
+            console.log(2);
+        });
+    </script>
+    <script>
+        var script = document.createElement("script");
+        script.src = "./module/c.js";
+        var head = document.getElementsByTagName("head")[0];
+        head.insertBefore(script, null);
+        script.onload = function (ev) {
+            console.log(4);
+        }
+    </script>
+    <!--最后输出是 3 4 0 1 2-->
+</body>
+</html>
