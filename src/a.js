@@ -7,6 +7,8 @@ define(function (require) {
     }
     var h2 = document.getElementById("h2");
     h2.onclick = function (ev) {
-        require('./d.js');
+        require(['./d.js'], function () {
+            console.log('callback')
+        });
     }
 })
