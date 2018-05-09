@@ -1,3 +1,3 @@
 define(function () {
-    console.log("0");
+    console.log("b");
 })
